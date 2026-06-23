@@ -7,6 +7,8 @@ import SectionBadge from '../ui/SectionBadge'
 
 export default function Gallery() {
   const [lightbox, setLightbox] = useState(null)
+  const imageItems = gallery.items.filter((item) => item.type === 'image')
+  const videoItems = gallery.items.filter((item) => item.type === 'video')
 
   return (
     <section id="gallery" className="section-pad bg-salon-ivory overflow-hidden">
@@ -23,15 +25,43 @@ export default function Gallery() {
         </ScrollReveal>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {gallery.items.map((item, index) => (
-            item.type === 'video' ? (
+          {imageItems.map((item, index) => (
+            <motion.button
+              key={item.id}
+              type="button"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.55, delay: index * 0.12 }}
+              className="group relative aspect-[4/3] rounded-3xl overflow-hidden text-left shadow-card hover:shadow-card-hover border border-gold-DEFAULT/20 transition-all duration-500 focus-gold"
+              onClick={() => setLightbox(item)}
+            >
+              <img
+                src={item.src}
+                alt={item.alt}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-salon-charcoal/55 via-transparent to-white/5" />
+              <div className="absolute inset-x-0 bottom-0 p-5 flex items-center justify-between text-white">
+                <span className="font-display text-xl">Salon Interior</span>
+                <span className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center">
+                  <ZoomIn className="w-4 h-4" />
+                </span>
+              </div>
+            </motion.button>
+          ))}
+        </div>
+
+        <div className="mt-6 grid gap-6 lg:grid-cols-3">
+          {videoItems.map((item, index) => (
               <motion.div
                 key={item.id}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.55, delay: index * 0.12 }}
-                className="md:col-span-2 rounded-3xl overflow-hidden shadow-card border border-gold-DEFAULT/20 bg-salon-charcoal"
+              className="mx-auto max-w-full rounded-3xl overflow-hidden shadow-card border border-gold-DEFAULT/20 bg-salon-charcoal"
               >
                 <video
                   src={item.src}
@@ -40,38 +70,12 @@ export default function Gallery() {
                   loop
                   playsInline
                   preload="metadata"
-                  className="w-full max-h-[680px] object-contain"
+                  className="block h-auto max-h-[680px] max-w-full"
                   aria-label={item.alt}
                 >
                   Your browser does not support video playback.
                 </video>
               </motion.div>
-            ) : (
-              <motion.button
-                key={item.id}
-                type="button"
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.55, delay: index * 0.12 }}
-                className="group relative aspect-[4/3] rounded-3xl overflow-hidden text-left shadow-card hover:shadow-card-hover border border-gold-DEFAULT/20 transition-all duration-500 focus-gold"
-                onClick={() => setLightbox(item)}
-              >
-                <img
-                  src={item.src}
-                  alt={item.alt}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-salon-charcoal/55 via-transparent to-white/5" />
-                <div className="absolute inset-x-0 bottom-0 p-5 flex items-center justify-between text-white">
-                  <span className="font-display text-xl">Salon Interior</span>
-                  <span className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center">
-                    <ZoomIn className="w-4 h-4" />
-                  </span>
-                </div>
-              </motion.button>
-            )
           ))}
         </div>
       </div>
