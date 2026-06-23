@@ -12,12 +12,16 @@ import CTAStrip from './components/sections/CTAStrip'
 import Contact from './components/sections/Contact'
 import Footer from './components/Footer'
 import FloatingButtons from './components/FloatingButtons'
+import watermarkLogo from './assets/site-watermark-logo.png'
 
 export default function App() {
   return (
-    <div className="min-h-screen overflow-x-hidden">
+    <div className="relative min-h-screen overflow-x-hidden">
+      <div className="site-watermark" aria-hidden="true">
+        <img src={watermarkLogo} alt="" />
+      </div>
       <Navbar />
-      <main>
+      <main className="relative z-10">
         <Hero />
         <About />
         <Services />
@@ -30,7 +34,9 @@ export default function App() {
         <CTAStrip />
         <Contact />
       </main>
-      <Footer />
+      <div className="relative z-10">
+        <Footer />
+      </div>
       <FloatingButtons />
     </div>
   )

@@ -1,5 +1,6 @@
-import { MapPin, Phone } from 'lucide-react'
+import { Facebook, Instagram, MapPin, Phone } from 'lucide-react'
 import { brand, nav } from '../data/siteContent'
+import footerLogo from '../assets/footer-logo.png'
 
 function WhatsAppIcon({ className = '' }) {
   return (
@@ -24,7 +25,7 @@ export default function Footer() {
 
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <img src={brand.logo} alt={brand.fullName} className="h-16 w-auto mb-5" />
+            <img src={footerLogo} alt={brand.fullName} className="h-24 w-auto mb-5" />
             <p className="text-white/55 font-body text-sm leading-relaxed max-w-xs mb-6">
               A premium beauty destination exclusively for women. Professional salon services, bridal makeovers, and certified beauty education programs.
             </p>
@@ -45,6 +46,25 @@ export default function Footer() {
                 aria-label="Call"
               >
                 <Phone className="w-5 h-5" strokeWidth={2.4} />
+              </a>
+              <a
+                href={brand.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-11 h-11 rounded-xl flex items-center justify-center text-white shadow-lg hover:-translate-y-1 transition-all duration-300"
+                style={{ background: 'linear-gradient(135deg, #F58529, #DD2A7B, #8134AF)' }}
+                aria-label="Instagram"
+              >
+                <Instagram className="w-5 h-5" strokeWidth={2.4} />
+              </a>
+              <a
+                href={brand.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-11 h-11 rounded-xl flex items-center justify-center bg-[#1877F2] text-white shadow-lg hover:bg-[#0B5FCC] hover:-translate-y-1 transition-all duration-300"
+                aria-label="Facebook"
+              >
+                <Facebook className="w-5 h-5" strokeWidth={2.4} />
               </a>
             </div>
           </div>
@@ -90,6 +110,24 @@ export default function Footer() {
               >
                 <WhatsAppIcon className="w-4 h-4 flex-shrink-0 text-[#25D366]" />
                 WhatsApp Us
+              </a>
+              <a
+                href={brand.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-white/50 hover:text-gold-DEFAULT transition-colors text-sm font-sans"
+              >
+                <Instagram className="w-4 h-4 flex-shrink-0 text-[#DD2A7B]" />
+                Follow on Instagram
+              </a>
+              <a
+                href={brand.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-white/50 hover:text-gold-DEFAULT transition-colors text-sm font-sans"
+              >
+                <Facebook className="w-4 h-4 flex-shrink-0 text-[#1877F2]" />
+                Follow on Facebook
               </a>
               <div className="flex items-start gap-3 text-white/40 text-xs font-sans leading-relaxed">
                 <MapPin className="w-3.5 h-3.5 flex-shrink-0 text-gold-DEFAULT/60 mt-0.5" />

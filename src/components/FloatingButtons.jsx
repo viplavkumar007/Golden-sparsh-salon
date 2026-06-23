@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Phone } from 'lucide-react'
+import { Facebook, Instagram, Phone } from 'lucide-react'
 import { brand } from '../data/siteContent'
 
 const WA_URL = `https://wa.me/91${brand.whatsapp}?text=${encodeURIComponent(
@@ -38,6 +38,44 @@ export default function FloatingButtons() {
         whileTap={{ scale: 0.95 }}
       >
         <Phone className="w-4.5 h-4.5" />
+      </motion.a>
+
+      {/* Facebook */}
+      <motion.a
+        href={brand.facebook}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Follow Golden Sparsh on Facebook"
+        className="w-11 h-11 rounded-full flex items-center justify-center text-white shadow-lg hover:shadow-xl transition-all"
+        style={{
+          background: 'linear-gradient(135deg, #1877F2, #0B5FCC)',
+        }}
+        initial={{ opacity: 0, x: 40 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.55 }}
+        whileHover={{ scale: 1.12, y: -2 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        <Facebook className="w-5 h-5" strokeWidth={2.4} />
+      </motion.a>
+
+      {/* Instagram */}
+      <motion.a
+        href={brand.instagram}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Follow Golden Sparsh on Instagram"
+        className="w-11 h-11 rounded-full flex items-center justify-center text-white shadow-lg hover:shadow-xl transition-all"
+        style={{
+          background: 'linear-gradient(135deg, #F58529, #DD2A7B, #8134AF)',
+        }}
+        initial={{ opacity: 0, x: 40 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.5 }}
+        whileHover={{ scale: 1.12, y: -2 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        <Instagram className="w-5 h-5" strokeWidth={2.4} />
       </motion.a>
 
       {/* WhatsApp - primary */}

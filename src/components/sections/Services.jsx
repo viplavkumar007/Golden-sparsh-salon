@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { MessageCircle, ArrowRight, Sparkles } from 'lucide-react'
+import { ArrowRight, MessageCircle, Sparkles } from 'lucide-react'
 import { serviceCategories, brand } from '../../data/siteContent'
 import ScrollReveal, { StaggerContainer, fadeUpItem } from '../ui/ScrollReveal'
 import SectionBadge from '../ui/SectionBadge'
@@ -73,34 +73,76 @@ export default function Services() {
             </div>
 
             {/* Service Cards Grid */}
-            <StaggerContainer className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4" staggerChildren={0.05}>
-              {activeCategory.services.map((service) => (
+            <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5" staggerChildren={0.05}>
+              {activeCategory.services.map((service) => {
+                const serviceName = typeof service === 'string' ? service : service.label
+                const servicePrice = typeof service === 'string' ? null : service.price
+                const serviceNote = typeof service === 'string' ? null : service.note
+
+                return (
                 <motion.div
-                  key={service}
+                  key={serviceName}
                   variants={fadeUpItem}
-                  className="group card-dark-glossy p-5 cursor-pointer"
-                  whileHover={{ y: -6, scale: 1.02 }}
+                  className="group relative min-h-[190px] overflow-hidden rounded-[8px] border border-gold-DEFAULT/25 bg-white/85 p-5 shadow-[0_18px_45px_rgba(53,53,53,0.08)] backdrop-blur-sm"
+                  whileHover={{ y: -6 }}
                   transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                 >
-                  <div className="flex flex-col h-full justify-between gap-4">
-                    <div>
-                      <div className="w-2 h-2 rounded-full bg-gold-DEFAULT mb-3 group-hover:scale-150 transition-transform" />
-                      <p className="text-salon-charcoal text-sm font-sans font-medium leading-snug">{service}</p>
+                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold-DEFAULT/70 to-transparent" />
+                  <div className="absolute right-4 top-4 text-gold-DEFAULT/20 transition-colors group-hover:text-gold-DEFAULT/40">
+                    <Sparkles className="h-5 w-5" />
+                  </div>
+
+                  <div className="relative flex h-full flex-col justify-between gap-5">
+                    <div className="pr-8">
+                      <div className="mb-4 flex items-center gap-2">
+                        <span className="h-px w-8 bg-gold-DEFAULT/70" />
+                        <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-gold-dark">
+                          {activeCategory.title}
+                        </span>
+                      </div>
+                      <p className="font-display text-xl font-semibold leading-tight text-salon-charcoal">
+                        {serviceName}
+                      </p>
                     </div>
+
+                    <div className="space-y-4">
+                      <div className="border-t border-gold-DEFAULT/15 pt-4">
+                        <p className="font-sans text-[10px] font-semibold uppercase tracking-[0.18em] text-salon-charcoal/45">
+                          Normal Price
+                        </p>
+                        <div className="mt-1 flex items-end justify-between gap-3">
+                          <p className="font-display text-2xl font-bold text-gold-dark">
+                            {servicePrice || 'Enquire'}
+                          </p>
+                          {serviceNote && (
+                            <span className="max-w-[120px] text-right font-sans text-[11px] leading-snug text-salon-charcoal/55">
+                              {serviceNote}
+                            </span>
+                          )}
+                        </div>
+                        <p className="mt-2 inline-flex rounded-full border border-gold-DEFAULT/25 bg-gold-DEFAULT/10 px-2.5 py-1 font-sans text-[10px] font-semibold uppercase tracking-[0.14em] text-gold-dark">
+                          5% discount available
+                        </p>
+                      </div>
+
                     <a
-                      href={waUrl(`Hi Golden Sparsh! I am interested in booking a ${service} appointment. Please share details and pricing.`)}
+                      href={waUrl(`Hi Golden Sparsh! I am interested in booking a ${serviceName} appointment. Please share details and pricing.`)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs text-gold-DEFAULT/70 hover:text-gold-DEFAULT font-sans font-medium transition-colors group/wa"
+                        className="inline-flex w-full items-center justify-between rounded-[6px] border border-gold-DEFAULT/25 px-3 py-2.5 text-xs font-semibold uppercase tracking-[0.12em] text-salon-charcoal/70 transition-colors hover:border-gold-DEFAULT hover:bg-gold-DEFAULT/10 hover:text-gold-dark group/wa"
                       onClick={(e) => e.stopPropagation()}
                     >
+                        <span className="inline-flex items-center gap-2">
                       <MessageCircle className="w-3.5 h-3.5" />
                       Book Now
+                        </span>
                       <ArrowRight className="w-3 h-3 group-hover/wa:translate-x-0.5 transition-transform" />
                     </a>
+                    </div>
                   </div>
                 </motion.div>
-              ))}
+                )
+              })}
             </StaggerContainer>
 
             {/* Category CTA */}

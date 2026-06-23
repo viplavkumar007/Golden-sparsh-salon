@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Sparkles } from 'lucide-react'
 import { brand, nav } from '../data/siteContent'
 import { useScrolled, useScrollSpy } from '../hooks/useScrollSpy'
+import navbarLogo from '../assets/navbar-logo.png'
 
 const WA_URL = `https://wa.me/91${brand.whatsapp}?text=${encodeURIComponent(
   'Hi Golden Sparsh! I would like to book an appointment. Please let me know the available slots.'
@@ -45,18 +46,10 @@ export default function Navbar() {
               aria-label="Golden Sparsh Home"
             >
               <img
-                src={brand.logo}
+                src={navbarLogo}
                 alt={brand.fullName}
-                className="h-10 xl:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                className="h-12 sm:h-14 xl:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
-              <span className="hidden sm:flex flex-col items-start leading-none">
-                <span className="font-display text-base xl:text-lg font-semibold tracking-wide text-salon-charcoal">
-                  Golden Sparsh
-                </span>
-                <span className="mt-1 font-sans text-[8px] xl:text-[9px] font-medium tracking-[0.16em] uppercase text-gold-dark">
-                  Salon &amp; Academy
-                </span>
-              </span>
             </button>
 
             {/* Desktop Nav */}
