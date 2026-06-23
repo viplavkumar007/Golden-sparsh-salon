@@ -15,9 +15,9 @@ export default function CTAStrip() {
         className="absolute inset-0"
         animate={{
           background: [
-            'linear-gradient(135deg, #0A0A0A 0%, #1A1200 50%, #0A0A0A 100%)',
-            'linear-gradient(135deg, #1A1200 0%, #2A1E00 50%, #1A1200 100%)',
-            'linear-gradient(135deg, #0A0A0A 0%, #1A1200 50%, #0A0A0A 100%)',
+            'linear-gradient(135deg, #FAF8F5 0%, #F4E7E7 50%, #E3C98A 100%)',
+            'linear-gradient(135deg, #F4E7E7 0%, #FAF8F5 50%, #E3C98A 100%)',
+            'linear-gradient(135deg, #FAF8F5 0%, #F4E7E7 50%, #E3C98A 100%)',
           ],
         }}
         transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
@@ -41,7 +41,7 @@ export default function CTAStrip() {
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
         <ScrollReveal>
           <Sparkles className="w-8 h-8 text-gold-DEFAULT mx-auto mb-5 animate-pulse" />
-          <h2 className="font-display font-bold text-3xl sm:text-5xl text-white mb-4 leading-tight">
+          <h2 className="font-display font-bold text-3xl sm:text-5xl text-salon-charcoal mb-4 leading-tight">
             Ready for Your{' '}
             <span
               style={{
@@ -56,7 +56,7 @@ export default function CTAStrip() {
               Golden Transformation?
             </span>
           </h2>
-          <p className="text-white/60 font-body text-lg mb-10 max-w-xl mx-auto">
+          <p className="text-salon-charcoal/65 font-body text-lg mb-10 max-w-xl mx-auto">
             Book your appointment today and experience the luxury of Golden Sparsh Salon & Academy.
           </p>
 

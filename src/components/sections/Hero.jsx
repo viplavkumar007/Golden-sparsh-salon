@@ -1,12 +1,11 @@
 import { motion } from 'framer-motion'
 import { Sparkles, ChevronDown, Star } from 'lucide-react'
 import { hero, brand } from '../../data/siteContent'
+import salon1 from '../../assets/salon1.jpeg'
 
 function waUrl(msg) {
   return `https://wa.me/91${brand.whatsapp}?text=${encodeURIComponent(msg)}`
 }
-
-const HERO_BG = 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1920&q=80'
 
 export default function Hero() {
   const container = {
@@ -21,12 +20,12 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-[100svh] overflow-hidden pt-[76px] sm:pt-[80px]"
     >
       {/* Background */}
       <div className="absolute inset-0">
         <img
-          src={HERO_BG}
+          src={salon1}
           alt="Luxury salon interior"
           className="w-full h-full object-cover"
           loading="eager"
@@ -35,12 +34,12 @@ export default function Hero() {
           className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(135deg, rgba(0,0,0,0.88) 0%, rgba(10,8,4,0.75) 50%, rgba(0,0,0,0.92) 100%)',
+              'linear-gradient(135deg, rgba(250,248,245,0.58) 0%, rgba(244,231,231,0.42) 48%, rgba(227,201,138,0.28) 100%)',
           }}
         />
         {/* Gold accent vignette */}
         <div
-          className="absolute inset-0 opacity-30"
+          className="absolute inset-0 opacity-15"
           style={{
             background:
               'radial-gradient(ellipse 80% 60% at 50% 60%, rgba(201,162,78,0.12) 0%, transparent 70%)',
@@ -63,12 +62,12 @@ export default function Hero() {
       />
 
       {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
+      <div className="relative z-10 min-h-[calc(100svh-80px)] max-w-5xl mx-auto px-4 sm:px-6 py-5 sm:py-7 flex items-center justify-center text-center">
         <motion.div variants={container} initial="hidden" animate="visible">
 
           {/* Badge */}
-          <motion.div variants={item} className="flex justify-center mb-8">
-            <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-xs font-sans font-semibold tracking-[0.2em] uppercase text-gold-light border border-gold-DEFAULT/30 bg-gold-DEFAULT/10">
+          <motion.div variants={item} className="flex justify-center mb-4">
+            <span className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full text-[10px] sm:text-xs font-sans font-semibold tracking-[0.12em] sm:tracking-[0.16em] uppercase text-salon-charcoal border border-gold-DEFAULT/40 bg-salon-ivory/90 backdrop-blur-md">
               <Star className="w-3 h-3 fill-gold-DEFAULT text-gold-DEFAULT" />
               {hero.badge}
               <Star className="w-3 h-3 fill-gold-DEFAULT text-gold-DEFAULT" />
@@ -76,25 +75,17 @@ export default function Hero() {
           </motion.div>
 
           {/* Heading */}
-          <motion.h1 variants={item} className="font-display font-bold leading-none tracking-tight mb-4">
-            <span className="block text-white text-5xl sm:text-7xl lg:text-8xl">{hero.heading1}</span>
+          <motion.h1 variants={item} className="font-display font-semibold leading-[0.9] tracking-[-0.035em] mb-4">
+            <span className="block text-[#292421] text-5xl sm:text-6xl lg:text-[4.5rem] xl:text-[5rem]">{hero.heading1}</span>
             <span
-              className="block text-gold-gradient text-6xl sm:text-8xl lg:text-9xl mt-1"
-              style={{
-                background: 'linear-gradient(135deg, #C9A24E 0%, #E3C98A 40%, #D4AF37 70%, #C9A24E 100%)',
-                backgroundSize: '200% auto',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-                animation: 'shimmer 4s linear infinite',
-              }}
+              className="block text-[#A87925] text-6xl sm:text-7xl lg:text-[5.5rem] xl:text-[6.25rem] mt-2"
             >
               {hero.heading2}
             </span>
           </motion.h1>
 
           {/* Gold ornament */}
-          <motion.div variants={item} className="flex items-center justify-center gap-4 my-6">
+          <motion.div variants={item} className="flex items-center justify-center gap-4 my-3">
             <div className="h-px w-20 sm:w-32" style={{ background: 'linear-gradient(90deg, transparent, #C9A24E)' }} />
             <Sparkles className="w-5 h-5 text-gold-DEFAULT" />
             <div className="h-px w-20 sm:w-32" style={{ background: 'linear-gradient(90deg, #C9A24E, transparent)' }} />
@@ -103,7 +94,7 @@ export default function Hero() {
           {/* Subheading */}
           <motion.p
             variants={item}
-            className="text-white/75 font-body text-lg sm:text-xl lg:text-2xl font-light tracking-wide max-w-2xl mx-auto mb-10"
+            className="text-salon-charcoal/90 font-sans text-sm sm:text-base lg:text-lg font-medium leading-relaxed max-w-2xl mx-auto mb-5 sm:mb-6 px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-salon-ivory/80 border border-white/80 backdrop-blur-md"
           >
             {hero.subheading}
           </motion.p>
@@ -132,22 +123,17 @@ export default function Hero() {
           {/* Stats */}
           <motion.div
             variants={item}
-            className="grid grid-cols-4 gap-4 mt-16 max-w-2xl mx-auto"
+            className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6 sm:mt-7 max-w-3xl mx-auto"
           >
             {hero.stats.map(({ value, label }) => (
-              <div key={label} className="text-center">
-                <div
-                  className="text-2xl sm:text-3xl font-display font-bold"
-                  style={{
-                    background: 'linear-gradient(135deg, #C9A24E, #E3C98A)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                  }}
-                >
+              <div
+                key={label}
+                className="text-center rounded-xl px-3 py-2.5 bg-salon-ivory/80 border border-white/80 backdrop-blur-md"
+              >
+                <div className="text-2xl sm:text-3xl font-display font-bold text-[#292421]">
                   {value}
                 </div>
-                <div className="text-white/55 text-xs font-sans tracking-wider mt-0.5">{label}</div>
+                <div className="text-salon-charcoal/75 text-[10px] sm:text-xs font-sans font-medium tracking-wide mt-0.5">{label}</div>
               </div>
             ))}
           </motion.div>
@@ -157,7 +143,7 @@ export default function Hero() {
       {/* Scroll cue */}
       <motion.button
         onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-gold-DEFAULT/60 hover:text-gold-DEFAULT transition-colors"
+        className="absolute bottom-3 sm:bottom-5 left-1/2 -translate-x-1/2 text-gold-dark/60 hover:text-gold-dark transition-colors"
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
         aria-label="Scroll down"

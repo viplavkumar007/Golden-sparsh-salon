@@ -1,6 +1,7 @@
 import logo from '../assets/logo.png'
 import salon1 from '../assets/salon1.jpeg'
 import salon2 from '../assets/salon2.jpeg'
+import salonTour from '../assets/salon-tour.mp4'
 
 export const brand = {
   name: 'Golden Sparsh',
@@ -190,10 +191,10 @@ export const whyUs = [
 export const gallery = {
   badge: 'Our Gallery',
   heading: 'Inside Golden Sparsh',
-  categories: ['All', 'Salon Interior', 'Hair', 'Bridal', 'Skin', 'Nails'],
   items: [
-    { id: 1, src: salon1, alt: 'Golden Sparsh Salon Interior - Styling Station', category: 'Salon Interior', tag: 'Interior' },
-    { id: 2, src: salon2, alt: 'Golden Sparsh Salon - Premium Hair Wash Station', category: 'Salon Interior', tag: 'Interior' },
+    { id: 1, type: 'image', src: salon1, alt: 'Golden Sparsh Salon Interior - Styling Station', tag: 'Interior' },
+    { id: 2, type: 'image', src: salon2, alt: 'Golden Sparsh Salon - Premium Hair Wash Station', tag: 'Interior' },
+    { id: 3, type: 'video', src: salonTour, alt: 'Golden Sparsh Salon Video Tour', tag: 'Salon Tour' },
   ],
 }
 

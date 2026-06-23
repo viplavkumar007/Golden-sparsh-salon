@@ -48,7 +48,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="section-pad bg-salon-cream overflow-hidden">
+    <section id="contact" className="section-pad bg-salon-blush overflow-hidden">
       <Toast toast={toast} onDismiss={() => setToast(null)} />
       <div className="max-w-7xl mx-auto">
 
@@ -68,7 +68,7 @@ export default function Contact() {
             <motion.div
               variants={fadeUpItem}
               className="rounded-3xl p-7 border border-gold-DEFAULT/20"
-              style={{ background: 'linear-gradient(145deg, #0A0A0A, #1A1A1A)' }}
+              style={{ background: 'linear-gradient(145deg, #353535, #222222)' }}
             >
               <h3 className="font-display font-bold text-xl text-white mb-5">Get In Touch</h3>
               <div className="flex flex-col gap-4">
@@ -118,7 +118,7 @@ export default function Contact() {
             <motion.div
               variants={fadeUpItem}
               className="rounded-3xl p-6 border border-gold-DEFAULT/20"
-              style={{ background: 'linear-gradient(145deg, #0A0A0A, #1A1A1A)' }}
+              style={{ background: 'linear-gradient(145deg, #353535, #222222)' }}
             >
               <div className="flex items-center gap-2 mb-4">
                 <Clock className="w-4 h-4 text-gold-DEFAULT" />

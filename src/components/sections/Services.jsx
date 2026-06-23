@@ -22,18 +22,18 @@ export default function Services() {
   const activeCategory = serviceCategories.find((c) => c.id === activeTab)
 
   return (
-    <section id="services" className="section-pad bg-salon-black overflow-hidden">
+    <section id="services" className="section-pad bg-salon-blush overflow-hidden">
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
         <ScrollReveal className="text-center mb-14">
-          <SectionBadge dark>Our Services</SectionBadge>
+          <SectionBadge>Our Services</SectionBadge>
           <h2 className="font-display font-bold text-4xl sm:text-5xl mt-3 mb-3 leading-tight">
-            <span className="text-white">Premium </span>
+            <span className="text-salon-charcoal">Premium </span>
             <span className="text-gold-gradient">Beauty Services</span>
           </h2>
           <div className="gold-divider max-w-xs mx-auto my-5" />
-          <p className="text-white/55 font-body text-lg max-w-2xl mx-auto">
+          <p className="text-salon-charcoal/65 font-body text-lg max-w-2xl mx-auto">
             From everyday beauty rituals to transformative treatments — we deliver luxury at every visit.
           </p>
         </ScrollReveal>
@@ -48,7 +48,7 @@ export default function Services() {
                 className={`px-5 py-2.5 rounded-full text-sm font-sans font-semibold tracking-wide transition-all duration-300 focus-gold ${
                   activeTab === cat.id
                     ? 'btn-gold-glossy'
-                    : 'text-white/60 border border-white/15 hover:border-gold-DEFAULT/40 hover:text-gold-light bg-transparent'
+                    : 'text-salon-charcoal/65 border border-gold-DEFAULT/25 hover:border-gold-DEFAULT hover:text-gold-dark bg-white/55'
                 }`}
               >
                 <span className="mr-1.5">{cat.icon}</span>
@@ -85,7 +85,7 @@ export default function Services() {
                   <div className="flex flex-col h-full justify-between gap-4">
                     <div>
                       <div className="w-2 h-2 rounded-full bg-gold-DEFAULT mb-3 group-hover:scale-150 transition-transform" />
-                      <p className="text-white text-sm font-sans font-medium leading-snug">{service}</p>
+                      <p className="text-salon-charcoal text-sm font-sans font-medium leading-snug">{service}</p>
                     </div>
                     <a
                       href={waUrl(`Hi Golden Sparsh! I am interested in booking a ${service} appointment. Please share details and pricing.`)}
@@ -128,7 +128,7 @@ export default function Services() {
           >
             <div className="text-center mb-8">
               <h3 className="font-display text-2xl font-bold">
-                <span className="text-white">Why Choose </span>
+                <span className="text-salon-charcoal">Why Choose </span>
                 <span className="text-gold-gradient">Golden Sparsh?</span>
               </h3>
             </div>
@@ -141,7 +141,7 @@ export default function Services() {
               ].map((item) => (
                 <div key={item.title} className="text-center">
                   <div className="text-3xl mb-2">{item.icon}</div>
-                  <p className="text-white/75 text-sm font-sans font-medium">{item.title}</p>
+                  <p className="text-salon-charcoal/75 text-sm font-sans font-medium">{item.title}</p>
                 </div>
               ))}
             </div>

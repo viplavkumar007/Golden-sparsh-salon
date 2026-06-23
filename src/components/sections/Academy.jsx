@@ -10,7 +10,7 @@ export default function Academy() {
   const waUrl = `https://wa.me/91${brand.whatsapp}?text=${encodeURIComponent(academy.cta.msg)}`
 
   return (
-    <section id="academy" className="section-pad bg-salon-cream overflow-hidden">
+    <section id="academy" className="section-pad overflow-hidden" style={{ background: 'linear-gradient(135deg, #EEF0EA 0%, #FAF8F5 55%, #F4E7E7 100%)' }}>
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
@@ -61,7 +61,7 @@ export default function Academy() {
           <div
             className="rounded-3xl p-10 border border-gold-DEFAULT/20 mb-10"
             style={{
-              background: 'linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%)',
+              background: 'linear-gradient(135deg, #6F7D63 0%, #87927D 100%)',
             }}
           >
             <div className="text-center mb-8">

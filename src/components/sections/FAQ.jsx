@@ -16,8 +16,8 @@ function FAQItem({ q, a, index, isOpen, onToggle }) {
       }`}
       style={{
         background: isOpen
-          ? 'linear-gradient(135deg, rgba(201,162,78,0.06) 0%, rgba(10,10,10,0.8) 100%)'
-          : 'linear-gradient(135deg, rgba(25,25,25,0.9) 0%, rgba(15,15,15,0.9) 100%)',
+          ? 'linear-gradient(135deg, #FFFFFF 0%, #F4E7E7 100%)'
+          : 'linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(250,248,245,0.9) 100%)',
       }}
     >
       <button
@@ -32,7 +32,7 @@ function FAQItem({ q, a, index, isOpen, onToggle }) {
           >
             {index + 1}
           </span>
-          <span className="font-sans font-semibold text-white text-sm leading-relaxed">{q}</span>
+          <span className="font-sans font-semibold text-salon-charcoal text-sm leading-relaxed">{q}</span>
         </div>
         <motion.span
           animate={{ rotate: isOpen ? 180 : 0 }}
@@ -54,7 +54,7 @@ function FAQItem({ q, a, index, isOpen, onToggle }) {
           >
             <div className="px-6 pb-6 pl-[60px]">
               <div className="gold-divider mb-4 opacity-30" />
-              <p className="text-white/65 font-body text-sm leading-relaxed">{a}</p>
+              <p className="text-salon-charcoal/65 font-body text-sm leading-relaxed">{a}</p>
             </div>
           </motion.div>
         )}
@@ -67,16 +67,16 @@ export default function FAQ() {
   const [openIdx, setOpenIdx] = useState(0)
 
   return (
-    <section className="section-pad bg-salon-black overflow-hidden">
+    <section className="section-pad bg-salon-blush overflow-hidden">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <ScrollReveal className="text-center mb-12">
-          <SectionBadge dark>FAQ</SectionBadge>
+          <SectionBadge>FAQ</SectionBadge>
           <h2 className="font-display font-bold text-4xl sm:text-5xl mt-3 mb-3">
-            <span className="text-white">Common </span>
+            <span className="text-salon-charcoal">Common </span>
             <span className="text-gold-gradient">Questions</span>
           </h2>
           <div className="gold-divider max-w-xs mx-auto my-5" />
-          <p className="text-white/55 font-body text-lg max-w-xl mx-auto">
+          <p className="text-salon-charcoal/60 font-body text-lg max-w-xl mx-auto">
             Everything you need to know about Golden Sparsh
           </p>
         </ScrollReveal>
