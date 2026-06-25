@@ -7,21 +7,21 @@ import salonVideo3 from '../assets/salon-video-3.mp4'
 
 export const brand = {
   name: 'Golden Sparsh',
-  fullName: 'Golden Sparsh Salon & Academy',
+  fullName: 'Golden Sparsh Salon',
   tagline: 'Where Beauty Meets Excellence',
-  tagline2: 'Premium Ladies Salon & Professional Beauty Academy',
+  tagline2: 'Premium Ladies Salon',
   logo,
   phone: '7775924144',
   whatsapp: '7775924144',
   email: '', // To be Updated Later
   address: {
-    line1: 'Near Lavanya Sadi Center',
-    line2: 'Nagar Road, Shirur',
-    city: 'Pune',
+    line1: 'Hari Om Hights, Navhra Fata Road',
+    line2: 'Near Dnyanganga International School, Baburao Nagar',
+    city: 'Shirur',
     pin: '412210',
     state: 'Maharashtra',
   },
-  addressFull: 'Near Lavanya Sadi Center, Nagar Road, Shirur, Pune - 412210, Maharashtra',
+  addressFull: 'Hari Om Hights, Navhra Fata Road, near Dnyanganga International School, Baburao Nagar, Shirur, Maharashtra 412210',
   instagram: 'https://www.instagram.com/goldensparsh_beautysalon?igsh=b29oM2E1ZXU1MWc0&utm_source=qr',
   facebook: 'https://www.facebook.com/share/1Cy75V8oCN/?mibextid=wwXIfr',
   mapEmbedUrl:
@@ -33,7 +33,6 @@ export const nav = {
     { label: 'Home', href: '#home' },
     { label: 'About', href: '#about' },
     { label: 'Services', href: '#services' },
-    { label: 'Academy', href: '#academy' },
     { label: 'Gallery', href: '#gallery' },
     { label: 'Testimonials', href: '#testimonials' },
     { label: 'Contact', href: '#contact' },
@@ -42,15 +41,15 @@ export const nav = {
 }
 
 export const hero = {
-  badge: 'Premium Ladies Salon & Academy • Shirur, Pune',
-  heading1: 'BEAUTY WITH',
-  heading2: 'ELEGANCE',
-  subheading: 'Premium Ladies Salon & Professional Beauty Academy — Where Beauty Meets Excellence',
+  badge: 'Premium Ladies Salon • Shirur, Pune',
+  heading1: 'Beauty With',
+  heading2: 'Elegance',
+  subheading: 'Premium Ladies Salon — Where Beauty Meets Excellence',
   cta1: { label: 'Book Appointment', msg: 'Hi Golden Sparsh! I would like to book an appointment. Please let me know the available slots.' },
-  cta2: { label: 'Join Academy', msg: 'Hi Golden Sparsh! I am interested in joining your beauty academy. Please share details about the courses and admission process.' },
+  cta2: { label: 'Explore Services', msg: 'Hi Golden Sparsh! I would like to know more about your salon services.' },
   stats: [
     { value: '500+', label: 'Happy Clients' },
-    { value: '10+', label: 'Beauty Courses' },
+    { value: '30+', label: 'Beauty Services' },
     { value: '5★', label: 'Rating' },
     { value: '100%', label: 'Hygiene' },
   ],
@@ -61,9 +60,9 @@ export const about = {
   heading: 'Welcome To Golden Sparsh',
   subheading: 'Your Premium Beauty Destination in Shirur, Pune',
   description1:
-    'Golden Sparsh Salon & Academy is a premium beauty destination exclusively for women. We specialize in professional salon services, bridal makeovers, advanced hair care, skin treatments, nail artistry, and certified beauty education programs.',
+    'Golden Sparsh Salon is a premium beauty destination exclusively for women. We specialize in professional salon services, bridal makeovers, advanced hair care, skin treatments, and nail artistry.',
   description2:
-    'Our mission is to enhance beauty while empowering women with professional beauty skills and career opportunities. We believe every woman deserves to feel extraordinary.',
+    'Our mission is to enhance beauty with personalized care, premium products, and a relaxing salon experience. We believe every woman deserves to feel extraordinary.',
   features: [
     { icon: '✦', label: 'Certified Professionals' },
     { icon: '✦', label: 'Premium Products' },
@@ -82,22 +81,22 @@ export const serviceCategories = [
     title: 'Hair Services',
     accent: '#C9A24E',
     services: [
-      { label: 'Hair Cut', price: 'From Rs. 150', note: 'Women cuts' },
-      { label: 'Hair Wash', price: 'From Rs. 199', note: 'Wash & blow dry' },
-      { label: 'Hair Spa', price: 'From Rs. 799', note: 'Normal price' },
-      { label: 'Hair Styling', price: 'From Rs. 399', note: 'Blow dry / setup' },
-      { label: 'Hair Coloring', price: 'From Rs. 249', note: 'Per streak' },
-      { label: 'Global Hair Color', price: 'From Rs. 1,400', note: 'Short length' },
-      { label: 'Root Touch-Up', price: 'From Rs. 999', note: 'Normal price' },
-      { label: 'Highlights', price: 'From Rs. 249', note: 'Per streak' },
-      { label: 'Keratin Treatment', price: 'From Rs. 4,999', note: 'Short length' },
-      { label: 'Hair Botox', price: 'From Rs. 4,499', note: 'Short length' },
-      { label: 'Smoothening', price: 'From Rs. 3,999', note: 'Short length' },
-      { label: 'Straightening', price: 'From Rs. 3,999', note: 'Short length' },
+      { label: 'Hair Cut' },
+      { label: 'Hair Wash' },
+      { label: 'Hair Spa' },
+      { label: 'Hair Styling' },
+      { label: 'Hair Coloring' },
+      { label: 'Global Hair Color' },
+      { label: 'Root Touch-Up' },
+      { label: 'Highlights' },
+      { label: 'Keratin Treatment' },
+      { label: 'Hair Botox' },
+      { label: 'Smoothening' },
+      { label: 'Straightening' },
       { label: 'Rebonding' },
       { label: 'Hair Extensions' },
     ],
-    waMsg: 'Hi Golden Sparsh! I am interested in your Hair Services. Please share more details and pricing.',
+    waMsg: 'Hi Golden Sparsh! I am interested in your Hair Services. Please share more details.',
   },
   {
     id: 'skin',
@@ -105,17 +104,17 @@ export const serviceCategories = [
     title: 'Skin Care',
     accent: '#E3C98A',
     services: [
-      { label: 'Cleanup', price: 'From Rs. 350', note: 'Normal price' },
-      { label: 'Gold Facial', price: 'From Rs. 800', note: 'Normal price' },
-      { label: 'Diamond Facial', price: 'From Rs. 1,100', note: 'Normal price' },
-      { label: 'Hydra Facial', price: 'From Rs. 2,000', note: 'Normal price' },
-      { label: 'Detan Treatment', price: 'From Rs. 350', note: 'Normal price' },
+      { label: 'Cleanup' },
+      { label: 'Gold Facial' },
+      { label: 'Diamond Facial' },
+      { label: 'Hydra Facial' },
+      { label: 'Detan Treatment' },
       { label: 'Anti-Aging Facial' },
-      { label: 'Skin Brightening', price: 'From Rs. 1,200', note: 'Normal price' },
+      { label: 'Skin Brightening' },
       { label: 'Acne Treatment' },
-      { label: 'Glow Treatment', price: 'From Rs. 999', note: 'Gold glow facial' },
+      { label: 'Glow Treatment' },
     ],
-    waMsg: 'Hi Golden Sparsh! I am interested in your Skin Care Services. Please share more details and pricing.',
+    waMsg: 'Hi Golden Sparsh! I am interested in your Skin Care Services. Please share more details.',
   },
   {
     id: 'beauty',
@@ -123,16 +122,16 @@ export const serviceCategories = [
     title: 'Beauty Services',
     accent: '#F6ECEC',
     services: [
-      { label: 'Threading', price: 'From Rs. 20', note: 'Upper lip / chin' },
-      { label: 'Waxing', price: 'From Rs. 70', note: 'Honey wax' },
-      { label: 'Rica Wax', price: 'From Rs. 120', note: 'Under arm' },
+      { label: 'Threading' },
+      { label: 'Waxing' },
+      { label: 'Rica Wax' },
       { label: 'Full Body Wax' },
-      { label: 'Bleach', price: 'From Rs. 150', note: 'Neck bleach' },
-      { label: 'Manicure', price: 'From Rs. 400', note: 'Normal price' },
-      { label: 'Pedicure', price: 'From Rs. 500', note: 'Normal price' },
+      { label: 'Bleach' },
+      { label: 'Manicure' },
+      { label: 'Pedicure' },
       { label: 'Body Polishing' },
     ],
-    waMsg: 'Hi Golden Sparsh! I am interested in your Beauty Services. Please share more details and pricing.',
+    waMsg: 'Hi Golden Sparsh! I am interested in your Beauty Services. Please share more details.',
   },
   {
     id: 'bridal',
@@ -140,17 +139,17 @@ export const serviceCategories = [
     title: 'Bridal Services',
     accent: '#D4AF37',
     services: [
-      { label: 'Bridal Makeup', price: 'From Rs. 4,000', note: 'HD bridal' },
-      { label: 'HD Makeup', price: 'Rs. 4,000 - 5,000', note: 'Normal price' },
+      { label: 'Bridal Makeup' },
+      { label: 'HD Makeup' },
       { label: 'Airbrush Makeup' },
-      { label: 'Engagement Makeup', price: 'From Rs. 1,500', note: 'Light makeup' },
-      { label: 'Reception Makeup', price: 'From Rs. 1,500', note: 'Light makeup' },
-      { label: 'Party Makeup', price: 'From Rs. 1,500', note: 'Light makeup' },
+      { label: 'Engagement Makeup' },
+      { label: 'Reception Makeup' },
+      { label: 'Party Makeup' },
       { label: 'Pre Bridal Packages' },
-      { label: 'Saree Draping', price: 'Rs. 500', note: 'Normal price' },
-      { label: 'Hair Styling', price: 'From Rs. 399', note: 'Blow dry / setup' },
+      { label: 'Saree Draping' },
+      { label: 'Hair Styling' },
     ],
-    waMsg: 'Hi Golden Sparsh! I am interested in your Bridal Services. Please share packages and pricing.',
+    waMsg: 'Hi Golden Sparsh! I am interested in your Bridal Services. Please share package details.',
   },
   {
     id: 'nails',
@@ -161,7 +160,7 @@ export const serviceCategories = [
       { label: 'Nail Extensions' }, { label: 'Gel Polish' }, { label: 'Nail Art' }, { label: 'French Nails' },
       { label: 'Refill' }, { label: 'Removal' }, { label: 'Luxury Nail Designs' },
     ],
-    waMsg: 'Hi Golden Sparsh! I am interested in your Nail Studio Services. Please share more details and pricing.',
+    waMsg: 'Hi Golden Sparsh! I am interested in your Nail Studio Services. Please share more details.',
   },
 ]
 
@@ -176,36 +175,7 @@ export const bridal = {
     { title: 'HD Makeup', desc: 'High-definition perfection for photos and videos' },
     { title: 'Airbrush Makeup', desc: 'Flawless, lightweight finish for all-day wear' },
   ],
-  cta: { label: 'Enquire About Bridal Package', msg: 'Hi Golden Sparsh! I am interested in your Bridal Makeup packages. Please share the complete bridal package details and pricing.' },
-}
-
-export const academy = {
-  badge: 'Beauty Academy',
-  heading: 'Build Your Career In Beauty Industry',
-  subheading: 'Professional training programs designed to transform beginners into certified beauty professionals.',
-  courses: [
-    { title: 'Basic Beautician Course', duration: '1 Month', icon: '🌸' },
-    { title: 'Advanced Beautician Course', duration: '3 Months', icon: '💄' },
-    { title: 'Professional Makeup Course', duration: '2 Months', icon: '✨' },
-    { title: 'Bridal Makeup Course', duration: '1 Month', icon: '👰' },
-    { title: 'Hair Styling Course', duration: '2 Months', icon: '💇‍♀️' },
-    { title: 'Hair Chemical Course', duration: '1 Month', icon: '🧴' },
-    { title: 'Skin Therapy Course', duration: '2 Months', icon: '🌿' },
-    { title: 'Nail Art Course', duration: '3 Weeks', icon: '💅' },
-    { title: 'Nail Extension Course', duration: '1 Month', icon: '💎' },
-    { title: 'Salon Management Course', duration: '3 Months', icon: '🏆' },
-  ],
-  features: [
-    { icon: '🎓', label: 'Professional Trainers' },
-    { icon: '🔬', label: 'Practical Sessions' },
-    { icon: '👥', label: 'Live Client Practice' },
-    { icon: '📜', label: 'Certification' },
-    { icon: '🧭', label: 'Career Guidance' },
-    { icon: '💼', label: 'Placement Assistance' },
-    { icon: '🎯', label: 'Small Batch Training' },
-    { icon: '🏭', label: 'Industry-Oriented' },
-  ],
-  cta: { label: 'Join Academy', msg: 'Hi Golden Sparsh! I want to join your Beauty Academy. Please share the course details, fee structure, and admission process.' },
+  cta: { label: 'Enquire About Bridal Package', msg: 'Hi Golden Sparsh! I am interested in your Bridal Makeup packages. Please share the complete bridal package details.' },
 }
 
 export const whyUs = [
@@ -216,7 +186,6 @@ export const whyUs = [
   { icon: '✨', title: 'Latest Techniques', desc: 'Stay ahead with cutting-edge beauty treatments and styles.' },
   { icon: '💎', title: 'Luxury Products', desc: 'Only premium, skin-safe beauty products from trusted brands.' },
   { icon: '💝', title: 'Personalized Care', desc: 'Customized beauty solutions tailored to your unique needs.' },
-  { icon: '🎓', title: 'Professional Training', desc: 'Industry-standard beauty education with practical learning.' },
 ]
 
 export const gallery = {
@@ -247,14 +216,6 @@ export const testimonials = [
     review: 'I have been coming here for my hair treatments for over a year now. The Keratin treatment was amazing – my hair has never felt this smooth and silky. The staff is so professional.',
     rating: 5,
     initials: 'SP',
-  },
-  {
-    id: 3,
-    name: 'Kavya Desai',
-    role: 'Academy Student',
-    review: 'I completed my Professional Makeup Course here and it completely changed my career. The trainers are experienced, practical sessions are excellent, and I got placement support too!',
-    rating: 5,
-    initials: 'KD',
   },
   {
     id: 4,
@@ -289,27 +250,11 @@ export const faqs = [
   },
   {
     q: 'Do you provide bridal makeup packages?',
-    a: 'Yes! We offer comprehensive bridal packages including Bridal Makeup, Pre-Bridal Treatments, Engagement Makeup, Reception Makeup, Saree Draping, and Hair Styling. Please WhatsApp us for customized package pricing.',
-  },
-  {
-    q: 'What beauty courses are available at the academy?',
-    a: 'We offer 10 professional courses: Basic Beautician, Advanced Beautician, Professional Makeup, Bridal Makeup, Hair Styling, Hair Chemical, Skin Therapy, Nail Art, Nail Extension, and Salon Management.',
-  },
-  {
-    q: 'Will I receive a certification after completing a course?',
-    a: 'Absolutely! All our courses come with professional certification upon completion. Our certifications are industry-recognized and help you launch your beauty career with credibility.',
-  },
-  {
-    q: 'Do you provide placement assistance for academy students?',
-    a: 'Yes, we provide career guidance and placement assistance to our students. We have industry connections and help students find opportunities in salons, as freelancers, or start their own ventures.',
+    a: 'Yes! We offer comprehensive bridal packages including Bridal Makeup, Pre-Bridal Treatments, Engagement Makeup, Reception Makeup, Saree Draping, and Hair Styling. Please WhatsApp us for customized package details.',
   },
   {
     q: 'Which beauty products do you use for services?',
     a: 'We exclusively use premium, skin-safe beauty products from trusted professional brands like Mavon, L\'Oreal, Wella, and other certified brands. Your skin\'s safety and results are our priority.',
-  },
-  {
-    q: 'How can I join the beauty academy?',
-    a: 'Simply WhatsApp us at 7775924144 or visit our salon. We will walk you through the course options, fee structure, batch timing, and guide you through the admission process.',
   },
 ]
 
@@ -320,7 +265,7 @@ export const contact = {
   phone: '7775924144',
   whatsapp: '7775924144',
   email: '',
-  address: 'Near Lavanya Sadi Center, Nagar Road, Shirur, Pune – 412210, Maharashtra',
+  address: 'Hari Om Hights, Navhra Fata Road, near Dnyanganga International School, Baburao Nagar, Shirur, Maharashtra 412210',
   hours: [
     { day: 'Monday – Saturday', time: '10:00 AM – 8:00 PM' },
     { day: 'Sunday', time: '10:00 AM – 6:00 PM' },

@@ -57,7 +57,7 @@ export default function CTAStrip() {
             </span>
           </h2>
           <p className="text-salon-charcoal/65 font-body text-lg mb-10 max-w-xl mx-auto">
-            Book your appointment today and experience the luxury of Golden Sparsh Salon & Academy.
+            Book your appointment today and experience the luxury of Golden Sparsh Salon.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

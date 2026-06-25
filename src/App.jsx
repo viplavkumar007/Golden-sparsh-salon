@@ -3,7 +3,6 @@ import Hero from './components/sections/Hero'
 import About from './components/sections/About'
 import Services from './components/sections/Services'
 import Bridal from './components/sections/Bridal'
-import Academy from './components/sections/Academy'
 import WhyUs from './components/sections/WhyUs'
 import Gallery from './components/sections/Gallery'
 import Testimonials from './components/sections/Testimonials'
@@ -26,7 +25,6 @@ export default function App() {
         <About />
         <Services />
         <Bridal />
-        <Academy />
         <WhyUs />
         <Gallery />
         <Testimonials />

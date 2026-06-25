@@ -1,6 +1,6 @@
-# Golden Sparsh Salon & Academy — Website
+# Golden Sparsh Salon — Website
 
-> Premium Ladies Salon & Professional Beauty Academy · Shirur, Pune
+> Premium Ladies Salon · Shirur, Pune
 
 ## Tech Stack
 
@@ -28,7 +28,6 @@ golden-sparsh/
 │   │   │   ├── About.jsx
 │   │   │   ├── Services.jsx
 │   │   │   ├── Bridal.jsx
-│   │   │   ├── Academy.jsx
 │   │   │   ├── WhyUs.jsx
 │   │   │   ├── Gallery.jsx
 │   │   │   ├── Testimonials.jsx
@@ -116,7 +115,6 @@ To update:
 - Business info, phone, WhatsApp → `brand` object
 - Hero text & CTAs → `hero` object
 - Services → `serviceCategories` array
-- Academy courses → `academy.courses`
 - Testimonials → `testimonials` array
 - FAQs → `faqs` array
 - Gallery images → add to `gallery.items`
@@ -132,4 +130,4 @@ To change the number, update `brand.whatsapp` in `siteContent.js`.
 
 ---
 
-© 2026 Golden Sparsh Salon & Academy
+© 2026 Golden Sparsh Salon

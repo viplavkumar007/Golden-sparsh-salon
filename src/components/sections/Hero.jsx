@@ -20,7 +20,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-[100svh] overflow-hidden pt-[76px] sm:pt-[80px]"
+      className="relative min-h-[100svh] overflow-hidden pt-[132px] sm:pt-[140px] lg:pt-[80px]"
     >
       {/* Background */}
       <div className="absolute inset-0">
@@ -62,7 +62,7 @@ export default function Hero() {
       />
 
       {/* Content */}
-      <div className="relative z-10 min-h-[calc(100svh-80px)] max-w-5xl mx-auto px-4 sm:px-6 py-5 sm:py-7 flex items-center justify-center text-center">
+      <div className="relative z-10 min-h-[calc(100svh-132px)] lg:min-h-[calc(100svh-80px)] max-w-5xl mx-auto px-4 sm:px-6 py-5 sm:py-7 flex items-center justify-center text-center">
         <motion.div variants={container} initial="hidden" animate="visible">
 
           {/* Badge */}
@@ -75,10 +75,12 @@ export default function Hero() {
           </motion.div>
 
           {/* Heading */}
-          <motion.h1 variants={item} className="font-display font-semibold leading-[0.9] tracking-[-0.035em] mb-4">
-            <span className="block text-[#292421] text-5xl sm:text-6xl lg:text-[4.5rem] xl:text-[5rem]">{hero.heading1}</span>
+          <motion.h1 variants={item} className="mb-4 leading-[0.82]">
+            <span className="block font-script text-[#292421] text-7xl sm:text-8xl lg:text-[6rem] xl:text-[6.75rem] font-bold drop-shadow-[0_2px_10px_rgba(53,53,53,0.12)]">
+              {hero.heading1}
+            </span>
             <span
-              className="block text-[#A87925] text-6xl sm:text-7xl lg:text-[5.5rem] xl:text-[6.25rem] mt-2"
+              className="block font-script text-[#D4AF37] text-8xl sm:text-9xl lg:text-[7rem] xl:text-[8rem] mt-1 font-bold drop-shadow-[0_2px_10px_rgba(201,162,78,0.22)]"
             >
               {hero.heading2}
             </span>

@@ -1,6 +1,6 @@
-import { useState, useCallback } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Sparkles } from 'lucide-react'
+import { useCallback } from 'react'
+import { motion } from 'framer-motion'
+import { Phone, Sparkles } from 'lucide-react'
 import { brand, nav } from '../data/siteContent'
 import { useScrolled, useScrollSpy } from '../hooks/useScrollSpy'
 import navbarLogo from '../assets/navbar-logo.png'
@@ -11,11 +11,9 @@ const WA_URL = `https://wa.me/91${brand.whatsapp}?text=${encodeURIComponent(
 
 export default function Navbar() {
   const scrolled = useScrolled(50)
-  const activeId = useScrollSpy(['home', 'about', 'services', 'academy', 'gallery', 'testimonials', 'contact'])
-  const [open, setOpen] = useState(false)
+  const activeId = useScrollSpy(['home', 'about', 'services', 'gallery', 'testimonials', 'contact'])
 
   const handleNav = useCallback((href) => {
-    setOpen(false)
     const id = href.replace('#', '')
     const el = document.getElementById(id)
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
@@ -91,65 +89,41 @@ export default function Navbar() {
               </a>
             </div>
 
-            {/* Mobile Menu Toggle */}
-            <button
-              onClick={() => setOpen((v) => !v)}
-              className="lg:hidden text-salon-charcoal p-2 rounded-lg hover:bg-salon-blush transition-colors focus-gold"
-              aria-label={open ? 'Close menu' : 'Open menu'}
+            {/* Mobile Quick Call */}
+            <a
+              href={`tel:${brand.phone}`}
+              className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/85 text-gold-dark shadow-[0_10px_25px_rgba(53,53,53,0.12)] ring-1 ring-gold-DEFAULT/15 transition-colors hover:bg-salon-blush focus-gold"
+              aria-label="Call Golden Sparsh"
             >
-              {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+              <Phone className="h-5 w-5" />
+            </a>
           </div>
+
+          {/* Mobile Pill Navigation */}
+          <nav
+            className="lg:hidden -mx-5 mt-3 flex gap-3 overflow-x-auto px-5 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            aria-label="Mobile navigation"
+          >
+            {nav.links.map(({ label, href }) => {
+              const id = href.replace('#', '')
+              const isActive = activeId === id
+              return (
+                <button
+                  key={label}
+                  onClick={() => handleNav(href)}
+                  className={`shrink-0 rounded-full px-5 py-3 text-sm font-sans font-semibold shadow-[0_8px_22px_rgba(53,53,53,0.10)] transition-all duration-200 focus-gold ${
+                    isActive
+                      ? 'bg-gradient-to-r from-[#F07AA1] to-[#F3B2B6] text-white shadow-[0_10px_26px_rgba(240,122,161,0.35)]'
+                      : 'bg-white/90 text-salon-charcoal hover:bg-salon-blush hover:text-gold-dark'
+                  }`}
+                >
+                  {label}
+                </button>
+              )
+            })}
+          </nav>
         </div>
       </motion.header>
-
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ opacity: 0, x: '100%' }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: '100%' }}
-            transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="fixed inset-0 z-40 lg:hidden"
-            style={{ background: 'rgba(53,53,53,0.98)', backdropFilter: 'blur(20px)' }}
-          >
-            <div className="flex flex-col h-full pt-24 px-8">
-              <nav className="flex flex-col gap-2">
-                {nav.links.map(({ label, href }, i) => (
-                  <motion.button
-                    key={label}
-                    initial={{ opacity: 0, x: 30 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.06 }}
-                    onClick={() => handleNav(href)}
-                    className="text-left py-4 text-2xl font-display text-white/90 hover:text-gold-DEFAULT border-b border-white/10 transition-colors tracking-wide"
-                  >
-                    {label}
-                  </motion.button>
-                ))}
-              </nav>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.45 }}
-                className="mt-8"
-              >
-                <a
-                  href={WA_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setOpen(false)}
-                  className="btn-gold-glossy w-full py-4 rounded-full text-base flex items-center justify-center gap-2"
-                >
-                  <Sparkles className="w-4 h-4" />
-                  Book Appointment
-                </a>
-              </motion.div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </>
   )
 }

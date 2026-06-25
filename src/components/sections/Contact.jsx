@@ -9,7 +9,7 @@ import Toast from '../ui/Toast'
 const INITIAL = { name: '', phone: '', service: '', message: '' }
 const SERVICES_LIST = [
   'Hair Services', 'Skin Care', 'Beauty Services',
-  'Bridal Makeup', 'Nail Studio', 'Academy Admission', 'Other',
+  'Bridal Makeup', 'Nail Studio', 'Other',
 ]
 
 export default function Contact() {

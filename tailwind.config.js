@@ -27,6 +27,7 @@ export default {
         body: ['Poppins', 'system-ui', 'sans-serif'],
         sans: ['Poppins', 'system-ui', 'sans-serif'],
         accent: ['Cinzel', 'serif'],
+        script: ['Dancing Script', 'cursive'],
       },
       backgroundImage: {
         'gold-gradient': 'linear-gradient(135deg, #C9A24E 0%, #E3C98A 50%, #C9A24E 100%)',
